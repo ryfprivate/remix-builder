@@ -13,7 +13,7 @@ export const loader = async ({ params, request, context }: LoaderArgs) => {
   const page = await builder
     .get("page", {
       userAttributes: {
-        urlPath: "/" + (params.page?.join("/") || ""),
+        urlPath: "/" + params["*"],
       },
       locale: params.locale,
     })
